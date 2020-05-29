@@ -1,4 +1,4 @@
-# _The Word Definer_
+# _Food Company_
 ## _By: Antonio Cruz_
 ## Description
 
