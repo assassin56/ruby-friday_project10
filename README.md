@@ -2,9 +2,9 @@
 ## _By: Antonio Cruz_
 ## Description
 
+_This is a webpage that, allowing users to input products which they can adjust prices on, add or remove the products, and leave reviews for said products as well._
 
 ## Setup
-
 
 1. If you would like to view this project locally... :
 
@@ -16,12 +16,13 @@
 
 5. Enter "ls" to show a list of files and documents. One of them will be labeled "ruby-friday_project10. Use "cd" followed by the project directory name to navigate there.
 
-6. While in project directory, run the command "bundle"
+6. While in project directory, run the command "rails s"
 
-7. Run "ruby app.rb" to open the server."
+7. Type in your browser the url "localhost:3000" to access the page.
 
 ## Known Bugs
-_No known bugs at this time_
+_Curently, cost and country fields will always return an errror upon any input_
+_Review submissions currently route back to a new and empty review form._
 
 ## Technology
 
@@ -32,10 +33,19 @@ _No known bugs at this time_
 * _Rspec_
 * _Capybara_
 * _Rails_
+* _Puma_
 * _Pry_
+* _Bootstrap_
 
 
 ## Specs
+
+| Behavior | Input | Output |
+|---|---|---|
+| Create a new Product| click "Create a new product"  | Route to New Product page |
+| Delete an existing Product | click "Delete" | Delete product |
+| Submit a Product Review | click "Enter a Review" | Review is submitted |
+| Delete a Review on a Product | click "Delete" | Review is deleted |
 
 ## Legal
 
