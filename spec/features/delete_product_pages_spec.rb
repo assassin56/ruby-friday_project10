@@ -8,6 +8,6 @@ describe "the process of deleting a product" do
     visit products_path
     click_link "Cyber Demon"
     click_link "Delete"
-    expect(page).to have_no_content ""
+    expect(page).to have_no_content "Cyber Demon"
   end
 end
