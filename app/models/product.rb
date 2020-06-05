@@ -4,10 +4,10 @@ class Product < ApplicationRecord
   validates :cost, presence: :true
   validates :country, presence: :true
 
-  before_save(:titleize_album)
+  before_save(:titleize_product)
 
   private
-    def titleize_album
+    def titleize_product
       self.name = self.name.titleize
     end
 end 
