@@ -12,6 +12,6 @@ describe " the process in adding a review" do
     fill_in 'Content body', :with => "I was not very happy with this product. All it did was rip and tear my carpet. I am a very displeased customer and I demand a refund"
     fill_in 'Rating', :with => 2
     click_on 'Create Review'
-    expect(page).to have_content 'This should fail'
+    expect(page).to have_content 'John Romero'
   end
 end
