@@ -8,6 +8,12 @@ describe "the process in adding a product" do
     fill_in 'Cost', :with => "14"
     fill_in 'Country', :with => "United States"
     click_on 'Create Product'
-    expect(page).to have_content "This Test Should Fail!"
+    expect(page).to have_content "Product successfully added!"
+  end
+
+  it "throws and error when a product property is not provided" do
+    visit new_product_path
+    click_on 'Create Product'
+    expect(page).to have_content "This should fail"
   end
 end
