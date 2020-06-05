@@ -9,7 +9,9 @@ class ReviewsController < ApplicationController
   def create
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new(review_params)
+    binding.pry
     if @review.save
+      binding.pry
       redirect_to product_path(@product)
       flash[:notice] = "Your review has been successfully added"
     else
