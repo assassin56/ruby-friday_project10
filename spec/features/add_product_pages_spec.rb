@@ -14,6 +14,6 @@ describe "the process in adding a product" do
   it "throws and error when a product property is not provided" do
     visit new_product_path
     click_on 'Create Product'
-    expect(page).to have_content "This should fail"
+    expect(page).to have_content "Name can't be blank"
   end
 end
