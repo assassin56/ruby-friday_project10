@@ -20,5 +20,18 @@
     <%= flash[:notice] %>
     
     <%= yield %>
+
+    <h4>Recent Products</h4>
+      <ul>
+        <% Product.three_recent.each do |product| %>
+        <li><%= link_to product.name, product_path(product) %></li>
+        <% end %>
+      </ul>
+    <h4>Most Reviewed</h4>
+      <ul>
+        <% Product.most_reviewed.each do |product| %>
+        <li><%=  link_to product.name, product_path(product) %></li>
+      <% end %>
+      </ul>
   </body>
 </html>
