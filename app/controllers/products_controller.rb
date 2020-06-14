@@ -1,4 +1,9 @@
 class ProductsController < ApplicationController
+  before_action :authorize, :except => [:show, :index]
+  before_action :only => [:edit, :destroy, :post] do
+    redirect_to signin_path unless current_user && current_user.admin
+    flash[:notice] = "Sorry, that command is only for admins. Please sign in as an admin to continue."
+  end
 
   def index
     @products = Product.all
