@@ -11,9 +11,9 @@
 
   <body>
     <% if current_user %>
-      <%= current_user.email  %> | <%= link_to "Sign Out", '/signout' %>
+      <%= current_user.email  %> | <%= link_to "Sign Out",  signout_path %>
     <% else %>
-      <%= link_to "Sign up", '/signup' %> | <%= link_to "Sign in", '/signin' %>
+      <%= link_to "Sign up", '/signup' %> | <%= link_to "Sign in", signin_path %>
     <% end %>
 
     <%= flash[:alert] %>
