@@ -10,28 +10,30 @@
   </head>
 
   <body>
-    <% if current_user %>
-      <%= current_user.email  %> | <%= link_to "Sign Out",  signout_path %>
-    <% else %>
-      <%= link_to "Sign up", '/signup' %> | <%= link_to "Sign in", signin_path %>
-    <% end %>
-
-    <%= flash[:alert] %>
-    <%= flash[:notice] %>
-    
-    <%= yield %>
-
-    <h4>Recent Products</h4>
-      <ul>
-        <% Product.three_recent.each do |product| %>
-        <li><%= link_to product.name, product_path(product) %></li>
-        <% end %>
-      </ul>
-    <h4>Most Reviewed</h4>
-      <ul>
-        <% Product.most_reviewed.each do |product| %>
-        <li><%=  link_to product.name, product_path(product) %></li>
+    <div class = "container">
+      <% if current_user %>
+        <%= current_user.email  %> | <%= link_to "Sign Out",  signout_path %>
+      <% else %>
+        <%= link_to "Sign up", '/signup' %> | <%= link_to "Sign in", signin_path %>
       <% end %>
-      </ul>
+
+      <%= flash[:alert] %>
+      <%= flash[:notice] %>
+      
+      <%= yield %>
+
+      <h4>Recent Products</h4>
+        <ul>
+          <% Product.three_recent.each do |product| %>
+          <li><%= link_to product.name, product_path(product) %></li>
+          <% end %>
+        </ul>
+      <h4>Most Reviewed</h4>
+        <ul>
+          <% Product.most_reviewed.each do |product| %>
+          <li><%=  link_to product.name, product_path(product) %></li>
+        <% end %>
+        </ul>
+    </div>
   </body>
 </html>
