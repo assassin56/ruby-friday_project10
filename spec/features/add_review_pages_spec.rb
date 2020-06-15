@@ -1,10 +1,13 @@
 require 'rails_helper'
 
-describe " the process in adding a review" do
+describe "the process in adding a review" do
   it "adds a review to the product" do
     new_product = Product.create!({:name => "Doom Guy", 
     :cost => "666", 
     :country => "United Aerospace Corporation"})
+    # fill_in 'Email', :with => "codrocks.cruz3@gmail.com"
+    # fill_in 'Password', :with => "password"
+    # click_on 'Sign In'
     visit products_path
     click_link 'Doom Guy'
     click_link 'Add a review'

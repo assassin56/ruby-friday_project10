@@ -2,7 +2,10 @@ require 'rails_helper'
 
 describe "the process in adding a product" do
   it "adds a new product" do
-    visit products_path
+    # visit signin_path
+    # fill_in 'Email', :with => "codrocks.cruz3@gmail.com"
+    # fill_in 'Password', :with => "password"
+    # click_on 'Sign In'
     click_link 'Create new product'
     fill_in 'Name', :with => "Pizza"
     fill_in 'Cost', :with => "14"
@@ -12,7 +15,11 @@ describe "the process in adding a product" do
   end
 
   it "throws and error when a product property is not provided" do
-    visit new_product_path
+    # visit signin_path
+    # fill_in 'Email', :with => "codrocks.cruz3@gmail.com"
+    # fill_in 'Password', :with => "password"
+    # click_on 'Sign In'
+    # visit new_product_path
     click_on 'Create Product'
     expect(page).to have_content "Name can't be blank"
   end
