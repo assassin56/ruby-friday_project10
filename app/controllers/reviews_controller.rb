@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :authorize, :except => [:show]
   before_action :only => [:edit, :destroy] do
-    redirect_to signin_path unless current_user && current_user.admin
+    redirect_to signin_path unless current_user || current_user.admin
     flash[:notice] = "Sorry, that command is only for admins. Please sign in as an admin to continue."
   end
 
