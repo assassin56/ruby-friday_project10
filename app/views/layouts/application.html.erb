@@ -14,7 +14,7 @@
       <% if current_user %>
         <%= current_user.email  %> | <%= link_to "Sign Out",  signout_path %>
       <% else %>
-        <%= link_to "Sign up", '/signup' %> | <%= link_to "Sign in", signin_path %>
+        <%= link_to "Sign Up", '/signup' %> | <%= link_to "Sign In", signin_path %>
       <% end %>
 
       <%= flash[:alert] %>
@@ -22,6 +22,11 @@
       
       <%= yield %>
 
+      <br>
+      <% if current_user || current_user.admin %>
+        <p><%= link_to "Create new product", new_product_path %></p>
+      <% end %>
+      
       <h4>Recent Products</h4>
         <ul>
           <% Product.three_recent.each do |product| %>
