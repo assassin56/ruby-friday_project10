@@ -21,11 +21,6 @@
       <%= flash[:notice] %>
       
       <%= yield %>
-
-      <br>
-      <% if current_user || current_user.admin %>
-        <p><%= link_to "Create new product", new_product_path %></p>
-      <% end %>
       
       <h4>Recent Products</h4>
         <ul>
@@ -39,6 +34,8 @@
           <li><%=  link_to product.name, product_path(product) %></li>
         <% end %>
         </ul>
+      <br>
+      <p><%= link_to "Return to products", products_path %></p>
     </div>
   </body>
 </html>
