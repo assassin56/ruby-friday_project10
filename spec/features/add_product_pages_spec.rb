@@ -10,8 +10,9 @@ describe "the process in adding a product" do
     visit signin_path
     fill_in 'Email', :with => "codrocks.cruz3@gmail.com"
     fill_in 'Password', :with => "password"
-    click_on 'Sign In'
-    click_link 'Create new product'
+    click_on 'Sign in'
+    click_on 'Return to products'
+    click_on 'Create new product'
     fill_in 'Name', :with => "Pizza"
     fill_in 'Cost', :with => "14"
     fill_in 'Country', :with => "United States"
