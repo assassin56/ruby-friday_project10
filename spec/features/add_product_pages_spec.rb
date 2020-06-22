@@ -20,13 +20,14 @@ describe "the process in adding a product" do
     expect(page).to have_content "Product successfully added!"
   end
 
-  # it "throws and error when a product property is not provided" do
-  #   # visit signin_path
-  #   # fill_in 'Email', :with => "codrocks.cruz3@gmail.com"
-  #   # fill_in 'Password', :with => "password"
-  #   # click_on 'Sign In'
-  #   # visit new_product_path
-  #   click_on 'Create Product'
-  #   expect(page).to have_content "Name can't be blank"
-  # end
+  it "throws and error when a product property is not provided" do
+    visit signin_path
+    fill_in 'Email', :with => "codrocks.cruz3@gmail.com"
+    fill_in 'Password', :with => "password"
+    click_on 'Sign in'
+    click_on 'Return to products'
+    click_on 'Create new product'
+    click_on 'Create Product'
+    expect(page).to have_content "Name can't be blank"
+  end
 end
